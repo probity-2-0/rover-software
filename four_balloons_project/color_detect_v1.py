@@ -11,7 +11,7 @@ from scipy.spatial import KDTree
 
 #small color dictionary with RGB values and their corresponding color names. This will be used to match the detected color to a known color name.
 color_dict = {(0,0,0):"black", (255,255,255):"white", (255,0,0):"red", (0,255,0):"green", (0,0,255):"blue", (255,255,0):"yellow", (255,0,255):"magenta", (0,255,255):"cyan"}
-#ensure the file path is correct and the image exists at that location, otherwise it will return an error. 
+#ensure your file path is correct and the image exists at that location, otherwise it will return an error. 
 img_path = "C:/-VEES/peeps/rover-software/four_balloons_project/pics/green_balloon.jpg"
 
 def get_color_name(rgb):
