@@ -11,11 +11,10 @@ from scipy.spatial import KDTree
 
 #small color dictionary with RGB values and their corresponding color names. This will be used to match the detected color to a known color name.
 color_dict = {(0,0,0):"black", (255,255,255):"white", (255,0,0):"red", (0,255,0):"green", (0,0,255):"blue", (255,255,0):"yellow", (255,0,255):"magenta", (0,255,255):"cyan"}
-img_path = "C:/-VEES/peeps/rover-software/four_balloons_project/pics/green_balloon.jpg"
+img_path = "peeps/rover-software/four_balloons_project/pics/robin.jpg"
 
 def get_color_name(rgb):
     """ This function takes an RGB color as input and returns the name of the closest color from the color dictionary. It uses a KDTree for efficient nearest neighbor search."""
-
     color_names = list(color_dict.values())
     color_rgb = list(color_dict.keys())
     tree = KDTree(color_rgb)
@@ -24,7 +23,6 @@ def get_color_name(rgb):
 
 def get_object_color(image_path):
     """ This function takes an image path as input and returns the RGB values and the name of the detected color. It reads the image, converts it to RGB format, reshapes it into a 2D array of pixels, and applies a mask to filter out pixels that are close to white (background). It then uses KMeans clustering to find the dominant color among the remaining pixels and matches it to a known color name using the get_color_name function."""
-
     img = cv2.imread(image_path)
     img = cv2.cvtColor(img, cv2.COLOR_BGR2RGB)
     img_pixels = img.reshape((-1,3))
