@@ -79,4 +79,4 @@ for lower, upper in boundaries:
 #Okay so what if there is no clear red, blue or green  in an image? I will have to opt for like a means to find the colour boundaries dynamically based on the image content. That is where the implementation of K-means clustering(The one I see see Amy yapping about in all her code versions) for color quantization comes in. 
 #By using K-means clustering, I can group similar colors together and identify the dominant colors in the image, which can then be used to define the color boundaries for detection. This approach allows for more flexibility and adaptability in color detection, especially in images with a wide range of colors or where the colors are not clearly defined. 
 #This is a v3 implementation idea, I will have to read up on K-means clustering and how to apply it for color quantization(Ha Quantization...like in signals...again) in OpenCV. 
-#Remember the TODOs
+#Remember the TODOzzz
