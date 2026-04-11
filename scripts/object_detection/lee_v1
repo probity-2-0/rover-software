@@ -1,0 +1,23 @@
+from ultralytics import YOLO
+
+def run_test():
+    # 1. Load a small, fast model (YOLO11 Nano)
+    model = YOLO("yolo11n.pt")
+
+    # 2. Run detection on a valid source
+    # Example: local image file
+    results = model.predict(source="C:\Root\Projects\probity\images\siestacat.jpeg", save=True)
+
+    # Or use webcam: source=0
+    # results = model.predict(source=0, show=True)
+
+    # 3. Print detections
+    for result in results:
+        for box in result.boxes:
+            class_id = int(box.cls[0])
+            label = model.names[class_id]
+            conf = round(float(box.conf[0]), 2)
+            print(f"Detected: {label} with {conf} confidence at {box.xyxy[0]}")
+
+if __name__ == "__main__":
+    run_test()
